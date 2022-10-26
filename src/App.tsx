@@ -4,7 +4,7 @@ import { Category } from './types/Category';
 import { Item } from './types/Item';
 import { categories } from './data/categories'; 
 import { items } from './data/items';
-import { getCurrentMonth } from './helpers/dateFilter';
+import { getCurrentMonth, filterListByMonth } from './helpers/dateFilter';
 
 const App = () => {
  const [list, setList] = useState(items);
@@ -12,7 +12,7 @@ const App = () => {
  const [month, setMonth] = useState(getCurrentMonth());
 
  useEffect(() =>{
-
+  setFilterList( filterListByMonth(list, month) );
  }, [list, month]);
 
   return (
