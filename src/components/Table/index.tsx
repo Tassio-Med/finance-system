@@ -1,4 +1,5 @@
 import { Item } from "../../types/Item";
+import { TableItem } from '../TableItem';
 
 type Props = {
   list: Item[]
@@ -6,23 +7,20 @@ type Props = {
 
  export const Table = ({list}:Props) => {
   return (
-    <div className="w-full h-24 rounded-md shadow-xl ">
-      <header className="w-full p-10 grid grid-cols-4 gap-4 font-semibold">
-        <tr>Data</tr>
-        <tr>Categoria</tr>
-        <tr>Título</tr>
-        <tr>Valor</tr>
-      </header>
-      <body className="">
+    <div className="w-[50%] h-[20%] mt-10 rounded-md shadow-xl bg-slate-50 flex flex-col justify-center items-center">
+      <thead className="w-full p-4 flex justify-center items-center">
+        <tr className="w-full grid grid-cols-4 gap-10 font-semibold text-center">
+          <th>Data</th>
+          <th>Categoria</th>
+          <th>Título</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody className="w-full px-4">
         {list.map((item, index) => (
-          <div key={index}>
-            <td></td>
-            <td></td>
-            <td>{item.title}</td>
-            <td></td>
-          </div>
+          <TableItem key={index} item={item} />
         ))}
-      </body>
+      </tbody>
     </div>
   );
  }
