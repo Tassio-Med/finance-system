@@ -16,11 +16,11 @@ import { Information } from './components/Information';
 const App = () => {
  const [list, setList] = useState(items);
  const [filterList, setFilterList] = useState<Item[]>([]);
- const [month, setMonth] = useState(getCurrentMonth());
+ const [currentMonth, setMonth] = useState(getCurrentMonth());
 
  useEffect(() =>{
-  setFilterList( filterListByMonth(list, month) );
- }, [list, month]);
+  setFilterList( filterListByMonth(list, currentMonth) );
+ }, [list, currentMonth]);
 
   return (
     <C.Container>
@@ -28,7 +28,7 @@ const App = () => {
         <C.HeaderText>Sistema Financeiro</C.HeaderText>
       </C.Header>
       <C.Body>
-        <Information/>
+        <Information currentMonth={currentMonth}/>
         <Table list={filterList}/>
       </C.Body>
     </C.Container>
