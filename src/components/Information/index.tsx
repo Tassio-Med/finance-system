@@ -1,14 +1,20 @@
 import * as C from './styles';
+import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from 'react-icons/bs'
 
-export const Information = () => {
+type Props = {
+  currentDate: string;
+}
+
+export const Information = ({ currentDate }: Props) => {
   return (
     <C.Container>
       <C.MonthArea>
-        <C.ArrowLeft></C.ArrowLeft>
-        <C.ArrowRight></C.ArrowRight>
+        <C.Arrow><BsFillArrowLeftCircleFill color='blue'/></C.Arrow>
+        <C.MonthName>currentDate</C.MonthName>
+        <C.Arrow><BsFillArrowRightCircleFill color='blue'/></C.Arrow>
       </C.MonthArea>
       <C.Resume>
-        
+
       </C.Resume>
     </C.Container>
   );
