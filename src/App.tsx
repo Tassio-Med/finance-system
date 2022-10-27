@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import * as C from './App.styles';
+
 import { Category } from './types/Category';
 import { Item } from './types/Item';
 
@@ -20,9 +22,14 @@ const App = () => {
  }, [list, month]);
 
   return (
-    <div className="w-full h-screen flex justify-center">
-      <Table list={filterList}/>
-    </div>
+    <C.Container>
+      <C.Header>
+        <C.HeaderText>Sistema Financeiro</C.HeaderText>
+      </C.Header>
+      <C.Body>
+        <Table list={filterList}/>
+      </C.Body>
+    </C.Container>
   );
 }
 
