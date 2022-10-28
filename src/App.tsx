@@ -22,13 +22,20 @@ const App = () => {
   setFilterList( filterListByMonth(list, currentMonth) );
  }, [list, currentMonth]);
 
+ const handleMonthChange = (newMonth: string) => {
+  setMonth(newMonth);
+ }
+
   return (
     <C.Container>
       <C.Header>
         <C.HeaderText>Sistema Financeiro</C.HeaderText>
       </C.Header>
       <C.Body>
-        <Information currentMonth={currentMonth}/>
+        <Information 
+          currentMonth={currentMonth}
+          onMonthChange={handleMonthChange}
+        />
         <Table list={filterList}/>
       </C.Body>
     </C.Container>
