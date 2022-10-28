@@ -2,13 +2,17 @@ import * as C from './styles';
 import {BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill} from 'react-icons/bs'
 
 import {formatCurrentDate} from '../../helpers/dateFilter';
+import { Resume } from '../Resume/index';
 
 type Props = {
   currentMonth: string;
   onMonthChange: (newMonth: string) => void;
+  revenue: number;
+  expense: number;
 }
 
-export const Information = ({ currentMonth, onMonthChange }: Props) => {
+export const Information = ({ currentMonth, onMonthChange, revenue, expense }: Props) => {
+
   const handlePrevMonth = () => {
     let [year, month] = currentMonth.split('-');
     let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
@@ -36,7 +40,9 @@ export const Information = ({ currentMonth, onMonthChange }: Props) => {
         </C.Arrow>
       </C.MonthArea>
       <C.Resume>
-
+        <Resume title="Receitas" value={revenue}/>
+        <Resume title="Despesas" value={expense}/>
+        <Resume title="Balanço" value={revenue - expense}/>
       </C.Resume>
     </C.Container>
   );
