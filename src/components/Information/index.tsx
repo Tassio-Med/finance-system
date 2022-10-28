@@ -5,15 +5,35 @@ import {formatCurrentDate} from '../../helpers/dateFilter';
 
 type Props = {
   currentMonth: string;
+  onMonthChange: (newMonth: string) => void;
 }
 
-export const Information = ({ currentMonth }: Props) => {
+export const Information = ({ currentMonth, onMonthChange }: Props) => {
+  const handlePrevMonth = () => {
+    let [year, month] = currentMonth.split('-');
+    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+    currentDate.setMonth( currentDate.getMonth() - 1 );
+    onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
+  }
+
+  const handleNextMonth = () => {
+    let [year, month] = currentMonth.split('-');
+    let currentDate = new Date(parseInt(year), parseInt(month) - 1, 1);
+    currentDate.setMonth( currentDate.getMonth() + 1 );
+    onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`);
+  }
+
+
   return (
     <C.Container>
       <C.MonthArea>
-        <C.Arrow><BsFillArrowLeftCircleFill color='blue'/></C.Arrow>
+        <C.Arrow onClick={handlePrevMonth}>
+          <BsFillArrowLeftCircleFill color='blue'/>
+        </C.Arrow>
         <C.MonthName>{formatCurrentDate(currentMonth)}</C.MonthName>
-        <C.Arrow><BsFillArrowRightCircleFill color='blue'/></C.Arrow>
+        <C.Arrow onClick={handleNextMonth}>
+          <BsFillArrowRightCircleFill color='blue'/>
+        </C.Arrow>
       </C.MonthArea>
       <C.Resume>
 
