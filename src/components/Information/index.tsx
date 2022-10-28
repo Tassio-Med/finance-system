@@ -42,7 +42,11 @@ export const Information = ({ currentMonth, onMonthChange, revenue, expense }: P
       <C.Resume>
         <Resume title="Receitas" value={revenue}/>
         <Resume title="Despesas" value={expense}/>
-        <Resume title="Balanço" value={revenue - expense}/>
+        <Resume
+          title="Balanço"
+          value={revenue - expense}
+          color={(revenue - expense) < 0 ? 'red' : 'green'}
+        />
       </C.Resume>
     </C.Container>
   );
