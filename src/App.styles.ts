@@ -1,11 +1,18 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
-
+export const Container = styled.div`
+    font-family: Arial;
+    background-color: #F48C06;
+    width: 100%;
+    height: 100vh;
+`;
+    
 export const Header = styled.div`
-    background-color: darkblue;
+    background-color: #191919;
     height: 150px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 `;
 
 export const HeaderText = styled.h1`

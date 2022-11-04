@@ -32,11 +32,11 @@ export const Information = ({ currentMonth, onMonthChange, revenue, expense }: P
     <C.Container>
       <C.MonthArea>
         <C.Arrow onClick={handlePrevMonth}>
-          <BsFillArrowLeftCircleFill color='blue'/>
+          <BsFillArrowLeftCircleFill color=' #F48C06'/>
         </C.Arrow>
         <C.MonthName>{formatCurrentDate(currentMonth)}</C.MonthName>
         <C.Arrow onClick={handleNextMonth}>
-          <BsFillArrowRightCircleFill color='blue'/>
+          <BsFillArrowRightCircleFill color=' #F48C06'/>
         </C.Arrow>
       </C.MonthArea>
       <C.Resume>
