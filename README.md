@@ -50,6 +50,8 @@ No projeto foi utilizada a seguinte paleta de cores:
   | `#282c34`   |`40, 44, 52`   | ![#282c34](https://placehold.co/300x50/282c34/282c34.png)  |
   | `#191919`   |`25, 25, 25`   | ![#191919](https://placehold.co/300x50/191919/191919.png)  |
   | `#F48C06`   |`244, 140, 6`  | ![#F48C06](https://placehold.co/300x50/F48C06/F48C06.png)  |
+  | `#f40606`   |`244, 6, 6`    | ![#f40606](https://placehold.co/300x50/f40606/f40606.png)  |
+  | `##02c40f`  |`2, 196, 15`  | ![##02c40f](https://placehold.co/300x50/02c40f/02c40f.png)  |
   
 </div>
 
